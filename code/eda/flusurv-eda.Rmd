@@ -119,22 +119,22 @@ hosp_wide %>%
 
 Same vertical axis scale:
 
-```{r}
+```{r, fig.height=10, fig.width=7}
 ggplot(data = all_hosp,
   mapping = aes(x = wk_end, y = weeklyrate, color = age_label, linetype = age_label)) +
   geom_line() +
-  facet_wrap( ~ region) +
-  theme_bw()
+  facet_wrap( ~ region, , ncol = 3) +
+  theme_bw(base_size = 10)
 ```
 
 Different vertical axis scales:
 
-```{r}
+```{r, fig.height=10, fig.width=7}
 ggplot(data = all_hosp,
   mapping = aes(x = wk_end, y = weeklyrate, color = age_label, linetype = age_label)) +
   geom_line() +
-  facet_wrap( ~ region, scales = "free_y") +
-  theme_bw()
+  facet_wrap( ~ region, scales = "free_y", ncol = 3) +
+  theme_bw(base_size = 10)
 ```
 
 Comparing Iowa vs other regions for the 2 seasons with data for Iowa:
